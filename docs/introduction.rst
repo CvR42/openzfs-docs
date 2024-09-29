@@ -27,9 +27,9 @@ platforms, and vice versa.
 Architecture
 ============
 
-ZFS itself is composed of three principle layers. The bottom layer is
-the Storage Pool Allocator, which handles organizing the physical
-disks into storage. The middle layer is the Data Management Unit,
+ZFS itself is composed of three principlal layers. The bottom layer is
+the Storage Pool Allocator (SPA), which handles organizing the physical
+disks into storage. The middle layer is the Data Management Unit (DMU),
 which uses the storage provided by the SPA by reading and writing to
 it transactionally in an atomic manner. The top layer is the dataset
 layer, which translates between operations on the filesystems and
@@ -81,7 +81,7 @@ virtual devices. At the top level of the tree is the root vdev. Its
 immediate children can be any vdev type other than itself. The main
 types of vdevs are:
 
-- mirror (n-way mirrors supported)
+- mirror (n-way mirrors are supported)
 - raidz
   - raidz1 (1-disk parity, similar to RAID 5)
   - raidz2 (2-disk parity, similar to RAID 6)
